@@ -14,8 +14,12 @@ import edu.uci.ics.jung.algorithms.layout.CircleLayout;
 import edu.uci.ics.jung.algorithms.layout.FRLayout;
 import edu.uci.ics.jung.algorithms.layout.ISOMLayout;
 import edu.uci.ics.jung.algorithms.layout.Layout;
+import edu.uci.ics.jung.algorithms.layout.RadialTreeLayout;
 import edu.uci.ics.jung.algorithms.layout.SpringLayout;
 import edu.uci.ics.jung.algorithms.layout.SpringLayout2;
+import edu.uci.ics.jung.graph.DelegateForest;
+import edu.uci.ics.jung.graph.DirectedGraph;
+import edu.uci.ics.jung.graph.Forest;
 import edu.uci.ics.jung.graph.Graph;
 import edu.uci.ics.jung.visualization.BasicVisualizationServer;
 import edu.uci.ics.jung.visualization.RenderContext;
@@ -37,11 +41,18 @@ public class App {
         Model model = ModelFactory.createDefaultModel();
         model.add(getN("a"), getN("p"), getN("b"));
         model.add(getN("b"), getN("p"), getN("c"));
-        model.add(getN("c"), getN("p"), getN("a"));
+        model.add(getN("d"), getN("p"), getN("e"));
+        model.add(getN("e"), getN("p"), getN("f"));
+        model.add(getN("d"), getN("p"), getN("g"));
+        model.add(getN("h"), getN("p"), getN("i"));
+        model.add(getN("i"), getN("p"), getN("j"));
+        model.add(getN("i"), getN("p"), getN("k"));
         model.setNsPrefix("ns", "http://example.com/ns#");
 
         Graph<RDFNode, Statement> g = new JenaJungGraph(model);
-        Layout<RDFNode, Statement> layout = new FRLayout(g);
+        DelegateForest<RDFNode, Statement> f =
+                new DelegateForest<RDFNode, Statement>((DirectedGraph<RDFNode, Statement>) g);
+        Layout<RDFNode, Statement> layout = new RadialTreeLayout(f);//new FRLayout(g);
         layout.setSize(new Dimension(300, 300));
         BasicVisualizationServer<RDFNode, Statement> viz =
                 new BasicVisualizationServer<RDFNode, Statement>(layout);
