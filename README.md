@@ -23,6 +23,8 @@ An Example
 	frame.pack();
 	frame.setVisible(true);
 
+See the [examples](http://github.com/shellac/JenaJung/tree/master/src/main/java/net/rootdev/jenajung/examples), which show how to produce png and svg images from JUNG.
+
 ToDo
 ----
 
