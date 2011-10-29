@@ -4,7 +4,7 @@
     <groupId>net.rootdev</groupId>
     <artifactId>JenaJung</artifactId>
     <packaging>jar</packaging>
-    <version>0.1</version>
+    <version>0.2-SNAPSHOT</version>
     <name>JenaJung</name>
     <inceptionYear>2010</inceptionYear>
     <url>http://rootdev.net/maven/projects/JenaJung/</url>
