@@ -29,7 +29,7 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git://github.com/shellac/JenaJung.git</connection>
+        <connection>scm:git:git@github.com:shellac/JenaJung.git</connection>
         <url>https://github.com/shellac/JenaJung/tree</url>
     </scm>
     <build>
