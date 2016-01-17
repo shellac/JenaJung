@@ -4,7 +4,7 @@
     <groupId>net.rootdev</groupId>
     <artifactId>JenaJung</artifactId>
     <packaging>jar</packaging>
-    <version>0.2</version>
+    <version>0.3</version>
     <name>JenaJung</name>
     <inceptionYear>2010</inceptionYear>
     <url>http://rootdev.net/maven/projects/JenaJung/</url>
@@ -39,26 +39,11 @@
                 <version>2.0.2</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId> 
-                <artifactId>wagon-ssh</artifactId> 
-                <version>1.0-beta-7</version> 
-            </extension> 
-        </extensions>
     </build>
     <dependencies>
         <dependency>
@@ -68,9 +53,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.hp.hpl.jena</groupId>
-            <artifactId>jena</artifactId>
-            <version>2.6.4</version>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-core</artifactId>
+            <version>3.0.0</version>
         </dependency>
         <dependency>
             <groupId>net.sf.jung</groupId>
@@ -89,6 +74,12 @@
             <version>1.7</version>
             <type>jar</type>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.4.01</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
     <distributionManagement>
